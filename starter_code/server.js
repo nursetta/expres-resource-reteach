@@ -47,12 +47,13 @@ app.post('/candies', function (req, res) {
   res.json(candies);
   });
 
-app.put('/candies/:id', function (req, res) {
+app.post('/candies/:id', function (req, res) {
   var id = req.body.id;
-  //for(var i = 0; i< candies.length; i++) {
+  for(var i = 0; i< candies.length; i++) {
     if (candies.id === undefined) {
-      console.log(id);
-      candies.push(id);
+      //console.log(id);
+      candies.create({id: 4});
       res.json(candies);
       }
+    }
 });
